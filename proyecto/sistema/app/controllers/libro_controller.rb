@@ -42,10 +42,16 @@ def vista_async
 end
 
 def create
-	b=eval(request.body.read)
+	
+	libro = Libro.new()
+	libro.autor=Autor.find(1)
+	libro.save
 	render json: {
-		estatus: 'ok'
+		
+		
+		estatus: libro.id
 	}
+	
 end
 
 end
