@@ -1,0 +1,6 @@
+<input type="text" [(ngModel)]='title'>
+<div *ngFor="let item of arreglo">{{item}}</div>
+
+<div *ngIf="mostrar">Esta en verdadero</div>
+<div *ngIf="!mostrar">Esta en Falso</div>
+<button (click)="mostrarAlerta()">{{title}}</button>
