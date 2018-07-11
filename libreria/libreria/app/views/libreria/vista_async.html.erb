@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+  <title>Yonathan Dario Bernal Palacios</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<button onclick="getLibros()">Traer Libros</button>
+	<table>
+		<tbody id="body">
+		</tbody>
+
+	</table>
+	<script>
+		function getLibros(){
+			var libros = [];
+			$.ajax({
+				url:'http://localhost:3000/libreria/get_libros',
+				method: 'get'
+			}).done(function(response){
+				libros = response.libros;
+				body = document.getElementById('body')
+				libros.forEach(function(Libro){
+					console.log(Libro)
+					tr =document.createElement('tr')
+					td =document.createElement('td');
+					td.append(Libro.autor);
+					tr.appendChild(td);
+					body.appendChild(tr);
+				})
+			})
+		}	
+
+	</script>
+
+</body>
+</html>
