@@ -33,3 +33,9 @@ this.arreglo.push(this.miVariable)
   });
   }
 }
+
+public emitir(): void
+{
+  
+  
+}
